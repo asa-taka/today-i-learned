@@ -25,7 +25,7 @@ export default function UserSummary(props: Props) {
   return (
     <div>
       <h3>
-        #{user.id}: {user.name}
+        #{user.id}: {user.name}'s Favorite Things
         {batch && " (batched!)"}
       </h3>
       <ul>
