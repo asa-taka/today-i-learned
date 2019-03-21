@@ -18,11 +18,12 @@ export interface Thing {
 // ---------
 
 const thingList: Thing[] = [
-  { id: 1, name: "Raindrops on roses" },
-  { id: 2, name: "Whiskers on kittens" },
-  { id: 3, name: "Bright copper kettles" },
-  { id: 4, name: "Warm wollen mittens" },
-  { id: 5, name: "Blown paper packages tied up with strings" }
+  { id: 1, name: "Raindrops" },
+  { id: 1, name: "Roses" },
+  { id: 2, name: "Kittens" },
+  { id: 3, name: "Kettles" },
+  { id: 4, name: "Mittens" },
+  { id: 5, name: "Packages" }
 ]
 
 const userList: User[] = [
