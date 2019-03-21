@@ -30,7 +30,7 @@ export default function UserSummary(props: Props) {
       </h3>
       <ul>
         {user.favoriteThingIds.map(id => (
-          <ThingSummary id={id} batch={batch} />
+          <ThingSummary key={id} id={id} batch={batch} />
         ))}
       </ul>
     </div>

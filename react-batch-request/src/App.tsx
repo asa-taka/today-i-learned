@@ -4,7 +4,7 @@ import "./App.css"
 
 import { UserSummary } from "./components"
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -20,5 +20,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

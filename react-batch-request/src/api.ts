@@ -19,7 +19,6 @@ export interface Thing {
 
 const thingList: Thing[] = [
   { id: 1, name: "Raindrops" },
-  { id: 1, name: "Roses" },
   { id: 2, name: "Kittens" },
   { id: 3, name: "Kettles" },
   { id: 4, name: "Mittens" },
