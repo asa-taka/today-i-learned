@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+     * Properties annotated with `deco` are not neccesary
+     * for `sticky` behavior. Just a decoration.
+     */
+
+    * {
+      /* deco */ margin: 0;
+      /* deco */ padding: 0;
+      /* deco */ box-sizing: border-box;
+    }
+
+    .item header, .item footer, .item .content {
+      /* deco */ padding: 24px;
+    }
+
+    .item .content {
+      /* deco */ height: 200px; /* simulate something content */
+    }
+
+    .item header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      /* deco */ background-color: #333;
+      /* deco */ color: white;
+    }
+    .item footer {
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 0;
+      /* deco */ background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <template id="item-with-sticky-things">
+    <div class="item">
+      <header>header</header>
+      <div class="content">
+        content
+      </div>
+      <footer>footer</footer>    
+    </div>
+  </template>
+
+  <script>
+    const template = document.getElementById('item-with-sticky-things')
+    Array(10).fill().forEach((_, i) => {
+      const e = document.importNode(template.content, true)
+      e.querySelector('header').innerText = `header #${i}`
+      e.querySelector('.content').innerText = `content #${i}`
+      e.querySelector('footer').innerText = `footer #${i}`
+      document.body.appendChild(e)
+    })
+  </script>
+</body>
+</html>
