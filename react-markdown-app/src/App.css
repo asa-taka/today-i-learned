@@ -1,33 +1,90 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333;
 }
 
-.App-link {
-  color: #61dafb;
+/* blog-list */
+
+.blog-list-header {
+  padding: 2em;
+  color: #999;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-list {
+  width: 300px;
+  min-height: 100vh;
+  border-right: 1px solid #eee;
+  box-shadow: 0 0 2px #eee;
+}
+
+.blog-item {
+  display: block;
+  padding: 1em 2em;
+  border-top: 1px solid #eee;
+  text-decoration: none;
+  transition: .2s background;
+}
+
+.blog-item-active {
+  background: #f3f3f3;
+}
+
+.blog-item-title {
+  font-weight: 700;
+  color: #666;
+}
+
+.blog-item-body {
+  color: #999;
+  font-size: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: .5em;
+}
+
+/* main-content */
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* blog-detail */
+
+.blog-detail {
+  min-height: 100vh;
+  padding: 2em;
+}
+
+.breadcrumbs {
+  margin-bottom: 1em;
+  color: #999;
+}
+
+.breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.blog-title {
+  font-size: 150%;
+  padding: 0 0 .5em;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-body {
+}
+
+.blog-body p {
+  line-height: 1.5;
+}
+
+/* home-content */
+
+.home-content {
+  padding: 2em;
 }
