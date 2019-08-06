@@ -1,0 +1,26 @@
+{
+  "name": "react-test-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "enzyme": "nodemon try-enzyme.js",
+    "react-test-renderer": "nodemon try-react-test-renderer.js",
+    "testing-library": "nodemon try-testing-library.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/react": "^8.0.7",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jsdom": "^15.1.1",
+    "jsdom-global": "^3.0.2",
+    "nodemon": "^1.19.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6"
+  }
+}
