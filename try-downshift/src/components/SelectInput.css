@@ -1,0 +1,8 @@
+.SelectInput-menuItem[aria-selected="true"] {
+  background-color: #666;
+}
+
+.SelectInput-menu {
+  border: 1px solid #999;
+  padding: 1rem;
+}

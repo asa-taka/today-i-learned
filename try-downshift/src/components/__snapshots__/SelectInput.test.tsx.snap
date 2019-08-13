@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInput fires \`onSelect\` once for each user-lick 1`] = `
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-3-label"
+    aria-owns="downshift-3-menu"
+    class="SelectInput-root"
+    role="combobox"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="downshift-3-menu"
+      aria-labelledby="downshift-3-label"
+      autocomplete="off"
+      class="SelectInput-input"
+      id="downshift-3-input"
+      value=""
+    />
+    <div
+      aria-labelledby="downshift-3-label"
+      class="SelectInput-menu"
+      id="downshift-3-menu"
+      role="listbox"
+    >
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-3-item-0"
+        role="option"
+      >
+        alice
+      </div>
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-3-item-1"
+        role="option"
+      >
+        bobby
+      </div>
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-3-item-2"
+        role="option"
+      >
+        cancy
+      </div>
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-3-item-3"
+        role="option"
+      >
+        daddy
+      </div>
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-3-item-4"
+        role="option"
+      >
+        evily
+      </div>
+    </div>
+    <button
+      class="SelectInput-submit"
+      type="submit"
+    >
+      submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SelectInput queries by input value 1`] = `
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-2-label"
+    aria-owns="downshift-2-menu"
+    class="SelectInput-root"
+    role="combobox"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="downshift-2-menu"
+      aria-labelledby="downshift-2-label"
+      autocomplete="off"
+      class="SelectInput-input"
+      id="downshift-2-input"
+      value="alice"
+    />
+    <div
+      aria-labelledby="downshift-2-label"
+      class="SelectInput-menu"
+      id="downshift-2-menu"
+      role="listbox"
+    >
+      <div
+        aria-selected="false"
+        class="SelectInput-menuItem"
+        id="downshift-2-item-0"
+        role="option"
+      >
+        alice
+      </div>
+    </div>
+    <button
+      class="SelectInput-submit"
+      type="submit"
+    >
+      submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SelectInput renders without crush 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="SelectInput-root"
+    role="combobox"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-labelledby="downshift-0-label"
+      autocomplete="off"
+      class="SelectInput-input"
+      id="downshift-0-input"
+      value=""
+    />
+    <button
+      class="SelectInput-submit"
+      type="submit"
+    >
+      submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`SelectInput shows menu on focus 1`] = `
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    aria-owns="downshift-1-menu"
+    class="SelectInput-root"
+    role="combobox"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-controls="downshift-1-menu"
+      aria-labelledby="downshift-1-label"
+      autocomplete="off"
+      class="SelectInput-input"
+      id="downshift-1-input"
+      value=""
+    />
+    <div
+      aria-labelledby="downshift-1-label"
+      class="SelectInput-menu"
+      id="downshift-1-menu"
+      role="listbox"
+    />
+    <button
+      class="SelectInput-submit"
+      type="submit"
+    >
+      submit
+    </button>
+  </div>
+</div>
+`;
