@@ -11,7 +11,10 @@ test('MyComponent renders fine :)', () => {
 
 test('MyComponent works fine :)', () => {
   const { container } = render(<MyComponent />)
+  
   const button = container.querySelector('button')
+  if (!button) throw new Error('button not found')
+
   expect(button.textContent).toBe('0')
   fireEvent.click(button)
   expect(button.textContent).toBe('1')

@@ -21,8 +21,10 @@ test('MyComponent renders fine :)', () => {
 
 test('MyComponent works fine :)', () => {
   render(<MyComponent />, container)
+
   const button = container.querySelector('button')
-  // if (!button) throw new Error('button not found')
+  if (!button) throw new Error('button not found')
+
   expect(button.textContent).toBe('0')
   act(() => {
     button.dispatchEvent(new MouseEvent('click', { bubbles: true }))

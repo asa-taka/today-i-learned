@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 function CountButton() {
   const [count, setCount] = useState(0)
-  return <button onClick={() => { setCount(s => s + 1)}}>{count}</button>
+  const increment = () => { setCount(s => s + 1) }
+  return <button onClick={increment}>{count}</button>
 }
 
 export default function MyComponent() {
