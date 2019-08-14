@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MySelectInput from './components/MySelectInput'
+import './App.css'
+
+interface User {
+  id: number
+  name: string
+  age: number
+}
+
+const users: User[] = [
+  { id: 1, name: 'alice', age: 12 },
+  { id: 2, name: 'bobby', age: 21 },
+  { id: 3, name: 'cancy', age: 32 },
+  { id: 4, name: 'daddy', age: 45 },
+  { id: 5, name: 'evily', age: 56 },
+]
+
+const userToString = (user: User | null) => (user ? user.name : '')
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MySelectInput
+          items={users}
+          itemToString={userToString}
+          onChange={console.log}
+        />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

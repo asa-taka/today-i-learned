@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MySelectInput with MyOtherComponent renders without crush 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="MySelectInput-root"
+    role="combobox"
+  >
+    <div
+      aria-autocomplete="list"
+      aria-labelledby="downshift-0-label"
+      class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    >
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          autocomplete="off"
+          class="MuiInputBase-input MuiInput-input"
+          id="downshift-0-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="MyOtherComponent-root"
+  />
+</div>
+`;
+
+exports[`MySelectInput with MyOtherComponent renders without crush in reverse order 1`] = `
+<div>
+  <div
+    class="MyOtherComponent-root"
+  />
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="MySelectInput-root"
+    role="combobox"
+  >
+    <div
+      aria-autocomplete="list"
+      aria-labelledby="downshift-0-label"
+      class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    >
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          autocomplete="off"
+          class="MuiInputBase-input MuiInput-input"
+          id="downshift-0-input"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
