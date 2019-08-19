@@ -71,6 +71,7 @@ export default function MyAppBar(props: Props) {
           {isMobile ? (
             <Drawer
               open={mobileOpen}
+              color="primary"
               onClose={closeDrawer}
               classes={{ paper: cls.drawerPaper }}
               variant="temporary"
@@ -80,6 +81,7 @@ export default function MyAppBar(props: Props) {
           ) : (
             <Drawer
               open
+              color="primary"
               classes={{ paper: cls.drawerPaper }}
               variant="permanent"
               children={drawerContent}
@@ -94,7 +96,7 @@ export default function MyAppBar(props: Props) {
         <HideOnScroll>
           <AppBar
             className={cls.appBar}
-            color="default"
+            color={isMobile ? 'primary' : 'default'}
             elevation={elevationTrigger ? 4 : 0}
           >
             <Toolbar>

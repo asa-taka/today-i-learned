@@ -1,9 +1,17 @@
 import { createMuiTheme } from '@material-ui/core'
-import { red } from '@material-ui/core/colors'
+import { cyan } from '@material-ui/core/colors'
+import { darken, lighten } from '@material-ui/core/styles/colorManipulator'
 
 export default createMuiTheme({ palette: {
   primary: {
-    main: red[100],
+    light: lighten(cyan[700], 0.5),
+    main: cyan[700],
+    dark: darken(cyan[700], 0.5),
+    contrastText: '#fff',
+  },
+  background: {
+    default: darken(cyan[700], 0.5),
+    paper: darken(cyan[700], 0.5),
   },
   type: 'dark',
 } })

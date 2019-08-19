@@ -12,6 +12,8 @@ import {
   Typography,
 } from '@material-ui/core'
 import * as Icons from '@material-ui/icons'
+import { fade } from '@material-ui/core/styles/colorManipulator'
+
 import { sequence } from '../utils'
 
 interface Props {
@@ -26,6 +28,9 @@ const useStyles = makeStyles(({ palette, spacing: sp, mixins }) => ({
     backgroundColor: palette.background.paper,
   },
   item: {},
+  avatar: {
+    background: fade(palette.common.white, 0.5),
+  },
   footer: {
     padding: sp(2),
     textAlign: 'center',
@@ -51,7 +56,7 @@ export default function MyContents(props: Props) {
         {sequence(length).map(i => (
           <ListItem key={i} className={cls.item} button dense>
             <ListItemAvatar>
-              <Avatar>{i}</Avatar>
+              <Avatar className={cls.avatar}>{i}</Avatar>
             </ListItemAvatar>
             <ListItemText
               primary={`User ${i}`}
