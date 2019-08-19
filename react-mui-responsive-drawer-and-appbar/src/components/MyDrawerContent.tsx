@@ -30,7 +30,7 @@ const useStyles = makeStyles(({ palette, spacing: sp, mixins }) => ({
     padding: sp(2),
     textAlign: 'center',
     color: palette.text.secondary,
-  }
+  },
 }))
 
 export default function MyContents(props: Props) {
@@ -42,7 +42,12 @@ export default function MyContents(props: Props) {
         <Typography variant="h6">MyDrawerContent</Typography>
       </Toolbar>
 
-      <List subheader={<ListSubheader className={cls.subheader} children={`User List`} />} dense>
+      <List
+        subheader={
+          <ListSubheader className={cls.subheader} children={`User List`} />
+        }
+        dense
+      >
         {sequence(length).map(i => (
           <ListItem key={i} className={cls.item} button dense>
             <ListItemAvatar>
@@ -58,7 +63,12 @@ export default function MyContents(props: Props) {
 
       {sequence(sets).map(setI => (
         <List
-          subheader={<ListSubheader className={cls.subheader} children={`User List #${setI}`} />}
+          subheader={
+            <ListSubheader
+              className={cls.subheader}
+              children={`User List #${setI}`}
+            />
+          }
           dense
         >
           {sequence(length).map(i => (
@@ -76,9 +86,7 @@ export default function MyContents(props: Props) {
       ))}
 
       <div className={cls.footer}>
-        <Typography variant="body2">
-          Here list ends
-        </Typography>
+        <Typography variant="body2">Here list ends</Typography>
       </div>
     </div>
   )
