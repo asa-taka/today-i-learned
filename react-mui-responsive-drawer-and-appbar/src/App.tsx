@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
+import { MuiThemeProvider, createMuiTheme, CssBaseline } from '@material-ui/core'
 
 import MyAppBar from './components/MyAppBar'
 import './App.css'
@@ -9,6 +9,7 @@ const theme = createMuiTheme()
 const App: React.FC = () => {
   return (
     <div className="App">
+      <CssBaseline />
       <MuiThemeProvider theme={theme}>
         <MyAppBar />
       </MuiThemeProvider>

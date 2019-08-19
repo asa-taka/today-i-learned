@@ -7,6 +7,7 @@ import {
   Typography,
   makeStyles,
   useMediaQuery,
+  useScrollTrigger,
   Theme,
 } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
@@ -16,6 +17,7 @@ import drawerTheme from '../themes/drawerTheme'
 import { useBoolean } from '../utils'
 import MyContents from './MyContents'
 import MyDrawerContent from './MyDrawerContent'
+import HideOnScroll from './HideOnScroll'
 
 interface Props {}
 
@@ -55,6 +57,11 @@ export default function MyAppBar(props: Props) {
 
   const isMobile = useMediaQuery<Theme>(theme => theme.breakpoints.down('sm'))
 
+  const elevationTrigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  })
+
   const drawerContent = <MyDrawerContent sets={3} length={12} />
 
   return (
@@ -84,21 +91,27 @@ export default function MyAppBar(props: Props) {
       <ThemeProvider
         theme={originalTheme => (isMobile ? drawerTheme : originalTheme)}
       >
-        <AppBar className={cls.appBar} color="default" elevation={0}>
-          <Toolbar>
-            {isMobile && (
-              <IconButton
-                className={cls.menuButton}
-                edge="start"
-                color="inherit"
-                onClick={openDrawer}
-              >
-                <Icons.Menu />
-              </IconButton>
-            )}
-            <Typography variant="h6">AppBar</Typography>
-          </Toolbar>
-        </AppBar>
+        <HideOnScroll>
+          <AppBar
+            className={cls.appBar}
+            color="default"
+            elevation={elevationTrigger ? 4 : 0}
+          >
+            <Toolbar>
+              {isMobile && (
+                <IconButton
+                  className={cls.menuButton}
+                  edge="start"
+                  color="inherit"
+                  onClick={openDrawer}
+                >
+                  <Icons.Menu />
+                </IconButton>
+              )}
+              <Typography variant="h6">AppBar</Typography>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
       </ThemeProvider>
 
       <div className={cls.contentWrapper}>
