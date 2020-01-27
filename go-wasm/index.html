@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+  <style>
+    html {
+      background-color: black;
+    }
+  </style>
+  <script src="node_modules/xterm/lib/xterm.js"></script>
+
+  <script src="wasm_exec.js"></script>
+  <script>
+    const runWasm = async (...args) => {
+      const go = new Go();
+      const { instance } = await WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+      go.argv = ['js', ...args]
+      go.run(instance);
+    }
+  </script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const term = new Terminal();
+    const PS = '\x1B[1;3;34mmy-cli\x1B[0m > '
+    let inputBuf = []
+    let outputBuf = ''
+
+    const decoder = new TextDecoder()
+
+    term.open(document.getElementById('terminal'))
+    term.write(PS)
+
+    let lastBuf = ''
+
+    // Overwrite wasm_exec.js
+    fs.writeSync = (fd, buf) => {
+      outputBuf += decoder.decode(buf)
+      const nl = outputBuf.lastIndexOf("\n")
+      outputBuf.substr(0, nl).split('\n').forEach(line => {
+        term.writeln(line)
+      })
+      outputBuf = outputBuf.substr(nl + 1)
+      return buf.length
+    }
+
+    term.onKey(e => {
+      const printable = !e.domEvent.altKey && !e.domEvent.altGraphKey && !e.domEvent.ctrlKey && !e.domEvent.metaKey;
+
+      if (e.domEvent.keyCode === 13) {
+        if (inputBuf.length > 0) {
+          runWasm(inputBuf.join('').split(' '))
+        }
+        term.write('\r\n' + PS)
+        inputBuf = []
+      } else if (e.domEvent.keyCode === 8) {
+          // Do not delete the prompt
+        if (term._core.buffer.x > 9) {
+          term.write('\b \b')
+        }
+      } else if (printable) {
+        term.write(e.key)
+        inputBuf.push(e.key)
+      }
+  })
+  </script>
+</body>
+</html>
