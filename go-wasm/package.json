@@ -4,12 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-wasm": "GOOS=js GOARCH=wasm go build -o src/assets/main.wasm",
+    "copy-wasm-exec": "cp $(go env GOROOT)/misc/wasm/wasm_exec.js src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "xterm": "^4.3.0"
+    "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "regenerator-runtime": "^0.13.3",
+    "xterm": "^4.3.0",
+    "xterm-addon-fit": "^0.3.0"
+  },
+  "staticFiles": {
+    "staticPath": "src/assets",
+    "watcherGlob": "**"
   }
 }

@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/asa-taka/today-i-learned/go-wasm/cmd"
+	"fmt"
 )
 
 func main() {
-	cmd.Execute()
+	fmt.Println("helhelo")
+	// cmd.Execute()
 }
