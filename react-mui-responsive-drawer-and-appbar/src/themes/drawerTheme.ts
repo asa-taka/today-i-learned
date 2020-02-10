@@ -5,7 +5,7 @@ import { darken, lighten } from '@material-ui/core/styles/colorManipulator'
 export default createMuiTheme({ palette: {
   primary: {
     light: lighten(cyan[700], 0.5),
-    main: cyan[700],
+    main: darken(cyan[700], 0.3),
     dark: darken(cyan[700], 0.5),
     contrastText: '#fff',
   },

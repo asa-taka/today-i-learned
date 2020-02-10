@@ -19,8 +19,6 @@ import MyContents from './MyContents'
 import MyDrawerContent from './MyDrawerContent'
 import HideOnScroll from './HideOnScroll'
 
-interface Props {}
-
 const useStyles = makeStyles(
   ({ palette, spacing: sp, breakpoints: bp, mixins }) => ({
     root: {
@@ -51,7 +49,11 @@ const useStyles = makeStyles(
   }),
 )
 
-export default function MyAppBar(props: Props) {
+interface Props {
+  children: React.ReactNode
+}
+
+export default function MyAppBar(p: Props) {
   const cls = useStyles()
   const [mobileOpen, openDrawer, closeDrawer] = useBoolean()
 
@@ -91,12 +93,12 @@ export default function MyAppBar(props: Props) {
       </ThemeProvider>
 
       <ThemeProvider
-        theme={originalTheme => (isMobile ? drawerTheme : originalTheme)}
+        theme={originalTheme => (true ? drawerTheme : originalTheme)}
       >
         <HideOnScroll>
           <AppBar
             className={cls.appBar}
-            color={isMobile ? 'primary' : 'default'}
+            color="primary"
             elevation={elevationTrigger ? 4 : 0}
           >
             <Toolbar>
@@ -119,7 +121,7 @@ export default function MyAppBar(props: Props) {
       <div className={cls.contentWrapper}>
         <div className={cls.appBarSpacer} />
         <div className={cls.content}>
-          <MyContents length={12} />
+          {p.children}
         </div>
       </div>
     </div>
