@@ -10,8 +10,8 @@ interface Props<E extends EntityTypeName> {
   type: E
 }
 
-export default function LookUp<E extends EntityTypeName>(props: Props<E>) {
-  const { id, type } = props
-  const e = useMappedState<RootState>(state => state.cache[type][id])
+const { id, type } = props
+const e = useMappedState<RootState>(state => state.cache[type][id])
+    export default function LookUp<E extends EntityTypeName>(props: Props<E>) {
   // console
 }
